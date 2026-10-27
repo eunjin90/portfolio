@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+@media screen and (max-width:999px){
+  header{
+    padding:18px 5%;
+  }
+  header .content{
+    width:100%;
+  }
+
+  .menu_icon{
+    display:block;
+    position:absolute;
+    padding:28px 20px;
+    right:0;
+    top:0;
+    /* background-color: rgb(230, 39, 207); */
+  }
+
+
+  .menu_icon .navicon{
+   display:block;
+   position: relative;
+   height:2px;
+   width:18px;
+   background-color:#000;
+   transition:all 0.2s;
+  }
+  .menu_icon .navicon:before,
+  .menu_icon .navicon:after {
+    display:block;
+    height:2px;
+    width:18px;
+    content:"";
+    background-color:#000;
+    transition:all 0.2s;
+    position:absolute;
+  }
+  .menu_icon .navicon:before{
+    top:5px;
+  }
+
+  .menu_icon .navicon:after{
+    top:-5px;
+  }
+
+  .menu_btn:checked ~  .menu_icon .navicon{
+    background-color:transparent;
+
+  }
+  .menu_btn:checked ~  .menu_icon .navicon:before{
+    transform:rotate(45deg);
+    top:0;
+  }
+  .menu_btn:checked ~  .menu_icon .navicon:after{
+    transform:rotate(-45deg);
+    top:0;
+  }
+
+
+  .menu_btn:checked ~ ul.nav{
+    display:block;
+  }
+
+  ul.nav{
+    display:none;
+    float:none;
+    position:absolute;
+    top:57px;
+    width:100%;
+    left:0;
+  }
+  ul.nav li {
+    float:none;
+    background-color:#3f51b5;
+    border-bottom:1px solid #fff;
+    margin-right:0;
+  }
+  ul.nav li a{
+    color:#fff;
+    line-height: 40px;
+    padding-left:40px;
+  }
+  .visual{
+    margin-top:62px;
+    height:360px;
+  }
+  .slider_rel h2{
+    right:auto;
+    left:0;
+    width:100%;
+    font-size: 10vw;
+    text-align: center;
+  }
+  .sec_tit{
+    float:none;
+    text-align: center;
+  }
+  .container{
+    padding-top:59px;
+  }
+
+  .cont_box{
+    float:none;
+    text-align: center;
+    margin-top:30px;
+    padding-left: 0;
+  }
+  .cont_box:before{
+    display:none;
+  }
+  .promo_list li{
+    float:none;
+    width:auto;
+    margin-top:52px;
+  }
+  .depth02{
+    margin:0 0 59px;
+  }
+  .work_list li {
+    width:50%;
+  }
+  .work_tit{
+    text-align: center;
+    margin-bottom:42px;
+  }
+  .blog_list{
+    float:none;
+    width:auto;
+    margin-top:47px;
+  }
+  .form_box{
+    float:none;
+    width:auto;
+  }
+
+
+}
+
+
+
+@media screen and (max-width:599px){
+
+ #wrap {
+   min-width: 360px;
+ }
+.work_list li{
+  width:100%;
+}
+.blog_list li{
+  width:100%;
+  margin: 0 0 45px 0 ;
+}
+.form_in>div{
+  width:auto;
+  margin:0;
+  float:none;
+}
+.send_btn{
+  margin-top:36px;
+}
+
+}

@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* 반응형 */
+
+@media screen and (max-width:1000px){
+    .header nav{display: none;}/* 메뉴가 안보이게 */
+    .menu_toggle_btn{display: block;}
+
+    .slider li.sl_01 h2{
+        left: calc(50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .slider li.sl_03 h2{
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+
+/* we are영역 */
+.we_are{
+    flex-direction: column;
+    align-items: center;
+}
+
+.sec_title{
+    margin-bottom: 50px;
+}
+
+.cont_box{
+    padding-left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.cont_box::before{
+    display: none;
+}
+
+.we_are_2 .we_are_list{
+    flex-direction: column;
+}
+
+.we_are_2 .we_are_list li{
+    padding: 30px 20px;
+}
+
+.work{text-align: center;}
+
+.work_list li{
+    width: 50%;
+}
+
+
+
+/* 블로그 영역 */
+
+.blog{
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog .blog_list{
+    width: 100%;
+}
+
+/* contact 영역 */
+.contact{
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_box{
+    width: 100%;
+}
+
+
+
+
+}/* 1000 */
+
+@media screen and (max-width:600px){
+    
+    .work_list li{
+        width: 100%;
+    }
+    .blog .blog_list{
+        flex-direction: column;
+    }
+    
+    .blog .blog_list li{
+        margin-bottom: 20px;
+    }
+    .blog .blog_list li:first-child{
+        padding-right: 20px !important;
+    }
+    .blog .blog_list li:last-child{
+        padding-right: 20px !important;
+    }
+
+    .form1{width: 100%;}
+    .form2{width: 100%;}
+}/* 600 */
