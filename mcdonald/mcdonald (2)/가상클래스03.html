@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .list {
+            text-align: center;
+        }
+
+        .list li {
+            display: inline-block;
+            border: 1px solid red;
+        }
+
+        .list li a {
+            display: block;
+            padding: 10px;
+            /* border: 1px solid red; */
+        }
+
+        .list li a::after {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 10px;
+            background-color: #ddd;
+            margin-left: 20px;
+        }
+
+        .list li:last-child a::after {
+            display: none;
+        }
+
+        .list li::before {
+            content: "a";
+            color: aqua;
+            font-size: 5px;
+        }
+
+
+        .list1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .list1 li {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .list1 li a {
+            display: block;
+            padding: 10px;
+            position: relative;
+
+        }
+        .list1 li a::before{
+            content: "|";
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+            color: #ddd;
+        }
+        .list1 li:first-child a::before{
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li><a href="#">menu01</a></li>
+        <li><a href="#">menu02</a></li>
+        <li><a href="#">menu03</a></li>
+        <li><a href="#">menu04</a></li>
+        <li><a href="#">menu05</a></li>
+    </ul>
+
+
+    <ul class="list1">
+        <li><a href="#">menu01</a></li>
+        <li><a href="#">menu02</a></li>
+        <li><a href="#">menu03</a></li>
+        <li><a href="#">menu04</a></li>
+        <li><a href="#">menu05</a></li>
+    </ul>
+</body>
+
+</html>

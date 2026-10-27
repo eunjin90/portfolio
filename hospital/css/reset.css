@@ -1,0 +1,30 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Uiyeun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{margin: 0;padding: 0; box-sizing: border-box;}
+
+ul,li,ol{list-style: none;}
+
+a{text-decoration: none; color: inherit;}
+
+img{vertical-align: bottom;}
+
+table{border-collapse: collapse;}
+
+body{
+    font-family: 'Uiyeun', "Josefin Sans";
+    font-size: 14px;
+
+}
+
+.clear_fix::after, .clear_fix::before{
+    content: "";
+    display: block;
+    clear: both;
+}

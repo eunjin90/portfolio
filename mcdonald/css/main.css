@@ -1,0 +1,335 @@
+@charset "utf-8";
+
+html, body{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+#wrap{
+    height: 100%;
+    width: 1920px;
+    margin: 0 auto;
+}
+
+/* header 영역 */
+
+#header{
+    width: 100%;
+    height: 140px;
+    background-color: pink;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+}
+
+.head_inner{
+    background-color: yellow;
+    width: 1168px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.logo{
+    float: left;
+    width: 106px;
+    height: 93px;
+    /* 로고그림사이즈 */
+    margin-top: 24px;
+    /* 140-93=23/2 =23.5 - (.단위가 안되기때문에 24나 23으로 적어준다
+    top으로 24px 마진을 줬기때문에 bottom으로 떨어지는 사이즈는 = 23px)*/
+}
+
+.logo a{}
+
+.nav{
+    float: left;
+    margin-left: 50px;
+    /* 로고와 간격을 떨어뜨려주기 위해서 마진레프트로 값을걸어준다 main에 걸어도됨 */
+}
+
+.main{}
+
+.main > li{
+    display: inline-block;
+    position: relative;
+    /* width: 200px; */
+}
+.main > li > a{
+    display: block;
+    /* 너비 높이를 마음대로 주기위해서 블럭구조로 바꿔준다 */
+    /* width: 140px; 
+    서브 너비를 가져올꺼기때문에 너비안적음*/
+    height: 140px;
+    line-height: 140px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 100px 0 0;
+}
+/* 서브에도 li랑 a가 있기 때문에 부등호를 넣어준다 */
+
+.main > li:hover > a{
+    border-bottom: 3px solid gold;
+}
+
+#header:hover .sub{
+    display: block;
+}
+#header:hover .sub_bg{
+    display: block;
+}
+
+.sub_bg{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(212, 243, 255);
+    position: absolute;
+    top: 140px;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.sub{
+    position: absolute;
+    left: 0; top: 140px;
+    /* border: 1px solid salmon; */
+    width: 120%;
+    /* text-align: left; */
+    display: none;
+    z-index: 5;
+}
+
+.sub li{}
+
+.sub li a{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #555;
+    padding: 20px 0;
+}
+
+.sub li a:hover{
+    text-decoration: underline;
+}
+
+.util{
+    float: right;
+    margin: 52px 0;
+}
+
+.util li{
+    display: inline-block;
+    /* margin-left: 5px; */
+}
+
+.util li a{
+    display: block;
+    width: 80px;
+    height: 36px;
+    border-radius: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.util_1{
+    background: #de0007;
+    border-radius: 20px;
+}
+
+.util_2{
+    background: #d77f03;
+    border-radius: 20px;
+}
+
+.util_3{
+    background-color: #284936;
+    border-radius: 20px;
+    margin-right: 15px;
+}
+
+.util_4{
+    width: 36px;
+    height: 36px;
+    background: url(../img/ico_search.png) no-repeat;
+    background-size: 80%;
+    background-position: center center;
+    text-indent: -9999px;
+}
+
+
+/* content 영역 */
+#content{
+    width: 100%;
+    max-width: 1920px;
+    padding-top: 140px;
+    margin: 0 auto;
+    /* 화면을 줄였을때 가운데로오게하기 위해서 걸어줌 */
+}
+
+.slide_img{
+    height: 540px;
+}
+.slide_img img{width: 100%;}
+
+/* live 영역 */
+.live{
+    width: 1168px;
+    margin: 20px auto;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.live_list{
+    margin-top: 50px;
+}
+
+.live_list li{
+    width: 366px;
+    height: 438px;
+    float: left;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-bottom: 35px;
+}
+
+.live_list li a{}
+
+.middle{
+    margin: 0 35px;
+}
+
+.live_list li a .list_img{
+    margin-bottom: 50px;
+}
+
+.live_list li a .list_img img{
+    width: 100%;
+}
+
+.live_list li a h4{
+    padding: 0 15px;
+    font-size: 25px;
+}
+
+.dot{
+    text-align: center;
+    margin: 40px 0 30px 0;
+    /* border: 1px solid red; */
+}
+
+
+/* footer 영역 */
+
+#footer{
+    width: 100%;
+    max-width: 1920px;
+    /* width: 100%; */
+    background-color: #292929;
+    font-size: 18px;
+    padding: 40px 0;
+}
+
+.foot_inner{
+    width: 1168px;
+    margin: 0 auto;
+}
+
+.f_menu{
+    float: left;
+}
+
+.f_menu li{}
+.f_menu li a{
+    color: white;
+    display: block;
+    padding: 3px 0;
+    font-weight: bold;
+}
+
+.yellow{
+/* .f_menu li a.yellow{} */
+    color: yellow !important;
+}
+
+.info{
+    float: left;
+    margin-left: 80px;
+}
+
+.info li{
+    padding: 3px 0;
+    color: #aaa;
+}
+
+.sns{
+    float: right;
+}
+
+.sns li{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.sns li a{
+    display: block;
+    /* 너비, 높이를 주기 위해서 블럭으로 걸어줌 */
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/ico_sns.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    text-indent: -9999px;
+}
+
+li.sns_1 a{}
+
+li.sns_2 a{
+    background-position: 0 -40px;
+}
+
+li.sns_3 a{
+    background-position: 0 -80px;
+}
+
+li.sns_4 a{
+    background-position: 0 -120px;
+}
+
+li.sns_5 a{
+    width: 100px;
+    height: 80px;
+    background-image: url(../img/mark.png) !important;
+    /* background-repeat: no-repeat;
+    sns li a에 걸어줬기때문에 안써줘도됨 */
+    background-position: 0 0;
+    background-size: 100px;
+}
+
+
+/* top 영역 */
+
+.top{
+    width: 120px;
+    height: 100%;
+    /* border: 1px solid red; */
+    position: fixed;
+    left: calc(50% + (1168px / 2) + 50px);
+    top: 550px;
+}
+
+.top a{
+    display: block;
+    text-align: center;
+    margin: 30px 0;
+}

@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* css 초기화 */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+ul, li, ol{list-style: none;}
+
+a{text-decoration: none; color: inherit;}
+
+img{vertical-align: baseline;}
+
+table{border-collapse: collapse;}
+
+input{
+    border: 1px solid #e65d5d;
+    color: #e65d5d;
+}
+
+input::-webkit-input-placeholder{
+    color: #e65d5d;
+}
+
+input::-moz-input-placeholder{
+    color: #e65d5d;
+}
+
+body{
+    font-family: "NanumGothic","맑은 고딕", Arial, Helvetica, sans-serif;
+    background: url(../images/s_images/body_bg.png);
+}
+
+/* 웹폰트 css만들기 */
+@font-face{
+    font-family: "NanumGothic";
+    /* 내가정하는 이름 */
+    src: url(../webfont/NanumGothic.woff);
+    /* 다운받은 글꼴 */
+}
+@font-face{
+    font-family: "NanumGothic";
+    src: url(../webfont/NanumGothic.eot);
+}
+
+@font-face{
+    font-family: "UhBee";
+    src: url(../webfont/UhBee\ Creator.ttf);
+}

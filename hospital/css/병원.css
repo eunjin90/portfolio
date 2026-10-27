@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+html, body{
+    height: 100%;
+}
+
+/* header 영역 */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    width: 1400px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.logo{
+    background-color: pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.logo a{
+    display: block;
+    width: 305px;
+    height: 51px;
+    background: url(../img/logo1.png)no-repeat center left;
+    text-indent: -9999px;
+    }
+
+.nav{
+}
+
+.main{
+    display: block;
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main li{}
+.main li a{}
+
+.sub{}
