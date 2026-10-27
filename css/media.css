@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* 반응형 */
+
+
+@media screen and (max-width:1300px){
+    .h_bottom .top_icon{
+        display: none;
+    }
+
+    .Lifestyle_list{display: none !important;}
+
+    .m_Lifestyle_list{
+        display: block !important;
+        margin-top: 30px;
+    }
+
+    .m_Lifestyle_list li{
+    }
+
+    .m_Lifestyle_list li .m_l_box{
+        border: 1px solid red;
+        padding: 20px;
+    }
+    .m_Lifestyle_list li .m_l_box .m_l_sub{
+        border: 1px solid gold;
+        /* min-width: 500px; */
+    }
+    .m_Lifestyle_list li .m_l_box .m_l_sub> a{
+        /* display: block; */
+        position: relative;
+    }
+    .m_Lifestyle_list li .m_l_box .m_l_sub > a > img{
+        width: 100%;
+    }
+    .m_Lifestyle_list li .m_l_box .m_l_sub h3{
+        text-align: right;
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+        font-size: 20px;
+        font-weight: normal;
+        background-color: white;
+        height: 30%;
+        line-height: 50px;
+        width: 70%;
+        padding-left: 20px;
+    }
+    .m_Lifestyle_list li .m_l_box .m_l_sub h3 span{
+        margin: 80px;
+        font-size: 0.8em;
+        color: #999;
+    }
+
+}
+
+
+@media screen and (max-width: 1024px){
+    .h_top {
+        display: none;
+    }
+    .h_bottom {
+        top: 0;
+    }
+    .h_bottom .nav {
+        display: none;
+    }
+    .h_bottom .logo {
+        width: 100%;
+    } 
+    .h_bottom .top_icon li:nth-child(1),
+    .h_bottom .top_icon li:nth-child(2){
+        display: none;
+    }
+    .h_bottom .m-btn {
+        display: block;
+    }
+
+    .move .slick-slide a{
+        height: auto;
+    }
+
+    .NewProduct_list{
+        /* flex-direction: column; */
+        display: block;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .NewProduct_list >li{
+        width: calc(100% / 2);
+        flex: none;
+        float: left;
+
+    }
+
+    .NewProduct_list >li:nth-child(2){padding-right: 0;
+    margin-bottom: 25px;}
+    .NewProduct_list >li:nth-child(3){padding-left: 0; margin-top: 30px;}
+    .NewProduct_list >li:nth-child(4){margin-top: 30px;}
+
+
+    
+    .NewProduct .more{
+        height: 55px;
+        line-height: 55px;
+        width: 210px;
+    }
+    
+
+    .Lifestyle_list .slick-slide{
+        width: 100%;
+    }
+
+
+    
+
+
+
+}/* 1024 */
+
+
+
+@media screen and (max-width:389px) {
+    .NewProduct_list{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        min-width: 0;
+    }
+
+    .NewProduct_list >li{
+        width: 100%;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .NewProduct_list >li:nth-child(2){margin-bottom: 0px;}
+
+    .NewProduct .more{
+        height: 42px;
+        line-height: 42px;
+        width: 170px;
+    }
+
+    .NewProduct .bottom_box{
+        min-width: 350px;
+    }
+
+    
+    .Lifestyle_list{
+        justify-content: flex-start
+    }
+
+    .Lifestyle_list li .l_box a img{
+        min-width: 350px;
+    }
+}/* 390 */
