@@ -19,15 +19,10 @@ a:focus-visible{outline:3px solid #5879b7;outline-offset:4px}
 .nav{display:flex;flex-wrap:wrap;gap:22px;font-size:14px;color:#536177}
 .nav a:hover{color:var(--blue-dark)}
 .hero{background:linear-gradient(120deg,#edf4ff 0%,#f7f9ff 58%,#edf7f2 100%);color:var(--navy);padding:72px 24px}
-.hero-inner{max-width:1052px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 190px;align-items:center;gap:54px}
+.hero-inner{max-width:1052px;margin:auto}
 .eyebrow,.section-title span,.about-label{color:var(--blue-dark);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:13px}
 .hero h1{font-size:clamp(31px,4.6vw,47px);line-height:1.35;letter-spacing:-1.8px;margin-bottom:18px;color:#243a5b}
-.hero-copy{color:#56677f;font-size:15px;line-height:1.95;max-width:650px}
-.profile{text-align:center}
-.profile-photo{width:154px;height:154px;margin:0 auto 14px;border:4px solid #fff;box-shadow:0 7px 24px rgba(50,78,119,.13);border-radius:50%;overflow:hidden;background:#e7edf7;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:42px;font-weight:800}
-.profile-photo img{display:block;width:100%;height:100%;object-fit:cover}
-.profile-name{font-size:19px;font-weight:700;margin-bottom:3px}
-.profile-role{font-size:12px;color:#697b94}
+.hero-copy{color:#56677f;font-size:15px;line-height:1.95;max-width:720px}
 .contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
 .contact-link{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid #d5e0f0;background:rgba(255,255,255,.68);border-radius:7px;font-size:12px;color:#314d77;overflow-wrap:anywhere}
 .contact-link:hover{background:#fff;border-color:#aabfe0}
@@ -54,8 +49,8 @@ a:focus-visible{outline:3px solid #5879b7;outline-offset:4px}
 .about-contact{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;color:var(--blue-dark);font-size:13px;font-weight:700}
 .about-contact a:hover{text-decoration:underline;text-underline-offset:3px}
 .footer{padding:25px 20px;text-align:center;color:#7b8799;font-size:12px}
-@media(max-width:850px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:60px 24px}.hero-inner{gap:30px;grid-template-columns:minmax(0,1fr) 160px}.profile-photo{width:130px;height:130px}}
-@media(max-width:560px){html{scroll-padding-top:75px}.header-inner{padding:14px 18px;align-items:flex-start;flex-direction:column;gap:9px}.logo{font-size:18px}.nav{gap:18px;font-size:13px}.hero{padding:42px 20px 46px}.hero-inner{grid-template-columns:1fr;gap:27px}.hero h1{letter-spacing:-1.2px}.hero-copy{font-size:14px}.hero-copy br{display:none}.profile{display:grid;grid-template-columns:82px 1fr;grid-template-rows:auto auto;column-gap:16px;text-align:left;align-items:center}.profile-photo{width:82px;height:82px;grid-row:1/3;margin:0;font-size:28px}.profile-name{align-self:end}.profile-role{align-self:start}.projects{padding:48px 18px 62px}.project-grid{grid-template-columns:1fr;gap:17px}.project-visual{min-height:135px}.section-title h2{font-size:26px}.about{padding:46px 20px}.about h2{font-size:24px}.contact-links{gap:8px}.contact-link{max-width:100%;font-size:11px}}
+@media(max-width:850px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:60px 24px}}
+@media(max-width:560px){html{scroll-padding-top:75px}.header-inner{padding:14px 18px;align-items:flex-start;flex-direction:column;gap:9px}.logo{font-size:18px}.nav{gap:18px;font-size:13px}.hero{padding:42px 20px 46px}.hero-inner{display:block}.hero h1{letter-spacing:-1.2px}.hero-copy{font-size:14px}.hero-copy br{display:none}.projects{padding:48px 18px 62px}.project-grid{grid-template-columns:1fr;gap:17px}.project-visual{min-height:135px}.section-title h2{font-size:26px}.about{padding:46px 20px}.about h2{font-size:24px}.contact-links{gap:8px}.contact-link{max-width:100%;font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
 </style>
 </head>
@@ -76,10 +71,7 @@ a:focus-visible{outline:3px solid #5879b7;outline-offset:4px}
 <a class="contact-link" href="tel:01024708890">☎ 010-2470-8890</a>
 </div>
 </div>
-<div class="profile">
-<div class="profile-photo"><img src="./profile.jpg" alt="이은진 프로필 사진"></div>
-<p class="profile-name">이은진</p><p class="profile-role">Web Publishing Portfolio</p>
-</div>
+
 </div></section>
 
 <section class="projects" id="projects">
