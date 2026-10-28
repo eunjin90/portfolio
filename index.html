@@ -1,536 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HTML, CSS, JavaScript를 활용한 웹 퍼블리싱 포트폴리오입니다.">
-  <title>Web Publisher Portfolio</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-
-    body {
-      font-family: Arial, "Malgun Gothic", sans-serif;
-      color: #222;
-      background: #f7f8fa;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:focus-visible {
-      outline: 3px solid #5879b7;
-      outline-offset: 4px;
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid #e8e8e8;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      white-space: nowrap;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    .nav a {
-      transition: color 0.2s;
-    }
-
-    .nav a:hover {
-      color: #365d9c;
-    }
-
-    .hero {
-      background: #172b4d;
-      color: #fff;
-      padding: 100px 24px 90px;
-    }
-
-    .hero-inner {
-      max-width: 1052px;
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      color: #b9d2ff;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.3;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      color: #d6deeb;
-      font-size: 16px;
-      line-height: 1.9;
-    }
-
-    .projects {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 76px 24px 100px;
-    }
-
-    .section-title {
-      margin-bottom: 32px;
-    }
-
-    .section-title span {
-      display: block;
-      color: #5879b7;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-
-    .section-title h2 {
-      font-size: 30px;
-      letter-spacing: -1px;
-    }
-
-    .section-title p {
-      margin-top: 10px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid #e9ebef;
-      border-radius: 12px;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 32px rgba(28, 42, 65, 0.10);
-    }
-
-    .project-visual {
-      min-height: 170px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      text-align: center;
-      overflow-wrap: anywhere;
-    }
-
-    .visual-title {
-      font-size: clamp(20px, 2.3vw, 25px);
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .canon {
-      background: #f1f0ed;
-      color: #3e3e3e;
-    }
-
-    .furniture {
-      background: #eee5d9;
-      color: #604b38;
-    }
-
-    .hana {
-      background: #e5f5ed;
-      color: #00866b;
-    }
-
-    .hollys {
-      background: #f8e9e9;
-      color: #9e3434;
-    }
-
-    .hospital {
-      background: #e7f1fa;
-      color: #2b6695;
-    }
-
-    .indigo {
-      background: #e9e8f8;
-      color: #4e4b9b;
-    }
-
-    .mcdonald {
-      background: #fff0d7;
-      color: #b33222;
-    }
-
-    .responsive {
-      background: #e3edf8;
-      color: #254f82;
-    }
-
-    .project-info {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .project-info h3 {
-      font-size: 19px;
-      margin-bottom: 8px;
-    }
-
-    .project-info p {
-      color: #777;
-      font-size: 13px;
-      line-height: 1.8;
-      flex: 1;
-    }
-
-    .project-link {
-      display: block;
-      margin-top: 20px;
-      padding-top: 14px;
-      border-top: 1px solid #eee;
-      color: #365d9c;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .about {
-      background: #fff;
-      padding: 65px 24px;
-    }
-
-    .about-inner {
-      max-width: 1052px;
-      margin: 0 auto;
-    }
-
-    .about-label {
-      color: #5879b7;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-
-    .about h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-    }
-
-    .about p {
-      max-width: 760px;
-      color: #666;
-      line-height: 2;
-      font-size: 14px;
-    }
-
-    .footer {
-      padding: 28px 20px;
-      text-align: center;
-      color: #888;
-      font-size: 12px;
-    }
-
-    @media (max-width: 850px) {
-      .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero {
-        padding-top: 75px;
-        padding-bottom: 70px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      html {
-        scroll-padding-top: 70px;
-      }
-
-      .header-inner {
-        padding: 16px 18px;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .logo {
-        font-size: 18px;
-      }
-
-      .nav {
-        gap: 18px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 60px 20px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1.5px;
-      }
-
-      .hero p {
-        font-size: 14px;
-      }
-
-      .hero p br {
-        display: none;
-      }
-
-      .projects {
-        padding: 55px 18px 70px;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .project-visual {
-        min-height: 140px;
-      }
-
-      .section-title h2 {
-        font-size: 26px;
-      }
-
-      .about {
-        padding: 50px 20px;
-      }
-
-      .about h2 {
-        font-size: 25px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="이은진의 웹 퍼블리싱 포트폴리오입니다. 다양한 주제의 웹 페이지 작업을 소개합니다.">
+<meta name="theme-color" content="#f4f8ff">
+<title>이은진 | Web Publishing Portfolio</title>
+<style>
+:root{--navy:#253b60;--blue:#4776b8;--blue-dark:#345e9c;--line:#e3eaf4;--muted:#68778d;--page:#f6f9fd;--mint:#e9f5ef}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Arial,"Malgun Gothic",sans-serif;color:#263247;background:var(--page);line-height:1.7}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid #5879b7;outline-offset:4px}
+.header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.header-inner{max-width:1120px;margin:auto;padding:17px 24px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.logo{font-size:19px;font-weight:800;letter-spacing:-.5px;white-space:nowrap;color:var(--navy)}
+.nav{display:flex;flex-wrap:wrap;gap:22px;font-size:14px;color:#536177}
+.nav a:hover{color:var(--blue-dark)}
+.hero{background:linear-gradient(120deg,#edf4ff 0%,#f7f9ff 58%,#edf7f2 100%);color:var(--navy);padding:72px 24px}
+.hero-inner{max-width:1052px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 190px;align-items:center;gap:54px}
+.eyebrow,.section-title span,.about-label{color:var(--blue-dark);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:13px}
+.hero h1{font-size:clamp(31px,4.6vw,47px);line-height:1.35;letter-spacing:-1.8px;margin-bottom:18px;color:#243a5b}
+.hero-copy{color:#56677f;font-size:15px;line-height:1.95;max-width:650px}
+.profile{text-align:center}
+.profile-photo{width:154px;height:154px;margin:0 auto 14px;border:4px solid #fff;box-shadow:0 7px 24px rgba(50,78,119,.13);border-radius:50%;overflow:hidden;background:#e7edf7;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:42px;font-weight:800}
+.profile-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.profile-name{font-size:19px;font-weight:700;margin-bottom:3px}
+.profile-role{font-size:12px;color:#697b94}
+.contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.contact-link{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid #d5e0f0;background:rgba(255,255,255,.68);border-radius:7px;font-size:12px;color:#314d77;overflow-wrap:anywhere}
+.contact-link:hover{background:#fff;border-color:#aabfe0}
+.projects{max-width:1100px;margin:auto;padding:70px 24px 86px}
+.section-title{margin-bottom:30px}
+.section-title span{display:block;margin-bottom:7px}
+.section-title h2{font-size:30px;letter-spacing:-1px;color:#253a5a}
+.section-title p{margin-top:9px;color:#6e7b8f;font-size:14px}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.project-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;background:#fff;border:1px solid #e5eaf2;border-radius:12px;transition:transform .25s,box-shadow .25s}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(38,58,90,.1)}
+.project-visual{min-height:155px;display:flex;justify-content:center;align-items:center;padding:22px;text-align:center;overflow-wrap:anywhere}
+.visual-title{font-size:clamp(19px,2.2vw,24px);font-weight:800;letter-spacing:-.7px}
+.canon{background:#f1f0ed;color:#3e3e3e}.furniture{background:#eee5d9;color:#604b38}.hana{background:#e5f5ed;color:#00866b}.hollys{background:#f8e9e9;color:#9e3434}.hospital{background:#e7f1fa;color:#2b6695}.indigo{background:#e9e8f8;color:#4e4b9b}.mcdonald{background:#fff0d7;color:#b33222}.responsive{background:#e3edf8;color:#254f82}.bootstrap{background:#eee8fb;color:#5b3a99}
+.project-info{padding:20px;display:flex;flex-direction:column;flex:1}
+.project-info h3{font-size:18px;margin-bottom:7px;color:#293b58}
+.project-info p{color:#68768a;font-size:13px;line-height:1.85;flex:1}
+.project-link{display:block;margin-top:17px;padding-top:12px;border-top:1px solid #edf0f5;color:var(--blue-dark);font-size:12px;font-weight:700}
+.about{background:#fff;padding:62px 24px;border-top:1px solid var(--line)}
+.about-inner{max-width:1052px;margin:auto}
+.about-label{margin-bottom:7px}
+.about h2{font-size:27px;letter-spacing:-.7px;margin-bottom:15px;color:#253a5a}
+.about p{max-width:780px;color:#657287;line-height:1.95;font-size:14px}
+.about-contact{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;color:var(--blue-dark);font-size:13px;font-weight:700}
+.about-contact a:hover{text-decoration:underline;text-underline-offset:3px}
+.footer{padding:25px 20px;text-align:center;color:#7b8799;font-size:12px}
+@media(max-width:850px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:60px 24px}.hero-inner{gap:30px;grid-template-columns:minmax(0,1fr) 160px}.profile-photo{width:130px;height:130px}}
+@media(max-width:560px){html{scroll-padding-top:75px}.header-inner{padding:14px 18px;align-items:flex-start;flex-direction:column;gap:9px}.logo{font-size:18px}.nav{gap:18px;font-size:13px}.hero{padding:42px 20px 46px}.hero-inner{grid-template-columns:1fr;gap:27px}.hero h1{letter-spacing:-1.2px}.hero-copy{font-size:14px}.hero-copy br{display:none}.profile{display:grid;grid-template-columns:82px 1fr;grid-template-rows:auto auto;column-gap:16px;text-align:left;align-items:center}.profile-photo{width:82px;height:82px;grid-row:1/3;margin:0;font-size:28px}.profile-name{align-self:end}.profile-role{align-self:start}.projects{padding:48px 18px 62px}.project-grid{grid-template-columns:1fr;gap:17px}.project-visual{min-height:135px}.section-title h2{font-size:26px}.about{padding:46px 20px}.about h2{font-size:24px}.contact-links{gap:8px}.contact-link{max-width:100%;font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+</style>
 </head>
-
 <body>
-  <header class="header">
-    <div class="header-inner">
-      <a href="#" class="logo" aria-label="포트폴리오 첫 화면">
-        MY PORTFOLIO.
-      </a>
+<header class="header"><div class="header-inner">
+<a href="#top" class="logo" aria-label="포트폴리오 첫 화면">EUNJIN'S PORTFOLIO.</a>
+<nav class="nav" aria-label="주요 메뉴"><a href="#projects">Projects</a><a href="#about">About</a></nav>
+</div></header>
+<main id="top">
+<section class="hero"><div class="hero-inner">
+<div class="hero-content">
+<p class="eyebrow">WEB PUBLISHING PORTFOLIO</p>
+<h1>안녕하세요,<br>이은진입니다.</h1>
+<p class="hero-copy">HTML과 CSS를 활용해 다양한 웹 페이지를 제작했습니다.<br>반응형 레이아웃을 작업했고, 일부 프로젝트에서는 JavaScript를 사용했습니다.</p>
+<div class="contact-links">
+<a class="contact-link" href="mailto:eunjin900808@gmail.com">✉ eunjin900808@gmail.com</a>
+<a class="contact-link" href="https://github.com/eunjin90" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+<a class="contact-link" href="tel:01024708890">☎ 010-2470-8890</a>
+</div>
+</div>
+<div class="profile">
+<div class="profile-photo"><img src="./profile.jpg" alt="이은진 프로필 사진"></div>
+<p class="profile-name">이은진</p><p class="profile-role">Web Publishing Portfolio</p>
+</div>
+</div></section>
 
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">WEB PUBLISHER PORTFOLIO</p>
-
-        <h1>
-          작은 디테일까지 고민하는<br>
-          웹 퍼블리셔 포트폴리오
-        </h1>
-
-        <p>
-          HTML과 CSS를 중심으로 웹 화면을 구현하고,<br>
-          일부 프로젝트에서는 JavaScript를 활용해 기능을 구현했습니다.<br>
-          다양한 작업을 통해 웹 퍼블리싱 경험을 쌓고 있습니다.
-        </p>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <div class="section-title">
-        <span>MY WORK</span>
-        <h2>Projects</h2>
-        <p>프로젝트를 선택하면 작업한 웹사이트를 확인할 수 있습니다.</p>
-      </div>
-
-      <div class="project-grid">
-
-        <a class="project-card" href="./canon/">
-          <div class="project-visual canon">
-            <span class="visual-title">CANON</span>
-          </div>
-          <div class="project-info">
-            <h3>Canon</h3>
-            <p>카메라 브랜드 웹사이트의 레이아웃과 콘텐츠 영역을 구현한 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./furniture/">
-          <div class="project-visual furniture">
-            <span class="visual-title">FURNITURE</span>
-          </div>
-          <div class="project-info">
-            <h3>Furniture</h3>
-            <p>가구 및 인테리어 웹사이트의 화면 구성과 레이아웃을 연습한 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./hana/">
-          <div class="project-visual hana">
-            <span class="visual-title">HANA TOUR</span>
-          </div>
-          <div class="project-info">
-            <h3>Hana Tour</h3>
-            <p>하나투어 홈페이지를 참고해 메뉴와 콘텐츠 영역을 구성한 웹사이트 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./hollys/">
-          <div class="project-visual hollys">
-            <span class="visual-title">HOLLYS</span>
-          </div>
-          <div class="project-info">
-            <h3>Hollys</h3>
-            <p>카페 브랜드 홈페이지의 메뉴와 주요 콘텐츠를 배치한 웹사이트 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./hospital/">
-          <div class="project-visual hospital">
-            <span class="visual-title">HOSPITAL</span>
-          </div>
-          <div class="project-info">
-            <h3>Hospital</h3>
-            <p>병원 홈페이지의 콘텐츠 영역과 전체적인 화면 레이아웃을 구현한 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./indigo/">
-          <div class="project-visual indigo">
-            <span class="visual-title">INDIGO</span>
-          </div>
-          <div class="project-info">
-            <h3>Indigo</h3>
-            <p>화면 크기에 따라 레이아웃이 조정되는 반응형 웹사이트를 구현한 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./mcdonald/">
-          <div class="project-visual mcdonald">
-            <span class="visual-title">McDonald's</span>
-          </div>
-          <div class="project-info">
-            <h3>McDonald's</h3>
-            <p>패스트푸드 브랜드 홈페이지의 구성과 콘텐츠 배치를 연습한 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./responsive_web_/">
-          <div class="project-visual responsive">
-            <span class="visual-title">RESPONSIVE WEB</span>
-          </div>
-          <div class="project-info">
-            <h3>Responsive Web</h3>
-            <p>다양한 화면 크기에 맞춰 웹 페이지를 구성하는 반응형 웹 실습 프로젝트입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="./0814bootstrap/">
-          <div class="project-visual responsive">
-            <span class="visual-title">BOOTSTRAP</span>
-          </div>
-          <div class="project-info">
-            <h3>Bootstrap Website</h3>
-            <p>Bootstrap을 활용해 레이아웃과 캐러셀 등 UI 요소를 구성한 웹 페이지 실습입니다.</p>
-            <span class="project-link">프로젝트 보기 ↗</span>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="about-inner">
-        <p class="about-label">ABOUT ME</p>
-        <h2>배우며 성장하는 웹 퍼블리셔 지망생</h2>
-        <p>
-          웹 화면을 직접 구현하고 결과를 확인하는 과정에 흥미를 느낍니다.
-          HTML과 CSS를 바탕으로 웹 퍼블리싱을 공부하고 있으며,
-          일부 프로젝트에서는 JavaScript도 활용했습니다.
-          다양한 작업을 통해 웹 페이지의 구조와 화면 구성에 대한 이해를 넓히고,
-          새로운 기술을 꾸준히 배우며 성장하고 있습니다.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    © 2026 Web Publisher Portfolio
-  </footer>
+<section class="projects" id="projects">
+<div class="section-title"><span>MY WORK</span><h2>Projects</h2><p>다양한 브랜드와 주제를 바탕으로 구성한 웹 페이지를 모았습니다.</p></div>
+<div class="project-grid">
+<a class="project-card" href="./canon/"><div class="project-visual canon"><span class="visual-title">CANON</span></div><div class="project-info"><h3>Canon</h3><p>카메라 브랜드 홈페이지를 참고해 이미지와 주요 콘텐츠를 배치했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./furniture/"><div class="project-visual furniture"><span class="visual-title">FURNITURE</span></div><div class="project-info"><h3>Furniture</h3><p>가구와 인테리어 이미지를 중심으로 콘텐츠와 레이아웃을 정리했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./hana/"><div class="project-visual hana"><span class="visual-title">HANA TOUR</span></div><div class="project-info"><h3>Hana Tour</h3><p>여행 정보를 살펴보기 쉽도록 메뉴와 주요 콘텐츠 영역을 나누어 구성했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./hollys/"><div class="project-visual hollys"><span class="visual-title">HOLLYS</span></div><div class="project-info"><h3>Hollys</h3><p>카페 브랜드의 분위기에 맞춰 메뉴와 주요 콘텐츠를 화면에 배치했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./hospital/"><div class="project-visual hospital"><span class="visual-title">HOSPITAL</span></div><div class="project-info"><h3>Hospital</h3><p>병원 홈페이지의 안내 정보가 잘 드러나도록 콘텐츠 영역을 정리했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./indigo/"><div class="project-visual indigo"><span class="visual-title">INDIGO</span></div><div class="project-info"><h3>Indigo</h3><p>화면 크기에 따라 레이아웃이 달라지는 반응형 웹 페이지를 구성했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./mcdonald/"><div class="project-visual mcdonald"><span class="visual-title">McDonald's</span></div><div class="project-info"><h3>McDonald's</h3><p>메뉴와 프로모션이 눈에 잘 들어오도록 브랜드 홈페이지의 콘텐츠를 배치했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./responsive_web_/"><div class="project-visual responsive"><span class="visual-title">RESPONSIVE WEB</span></div><div class="project-info"><h3>Responsive Web</h3><p>다양한 화면 크기에서도 콘텐츠가 자연스럽게 보이도록 레이아웃을 구성했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+<a class="project-card" href="./0814bootstrap/"><div class="project-visual bootstrap"><span class="visual-title">BOOTSTRAP</span></div><div class="project-info"><h3>Bootstrap Website</h3><p>Bootstrap의 구성 요소를 활용해 웹 페이지의 레이아웃과 캐러셀을 구성했습니다.</p><span class="project-link">프로젝트 보기 ↗</span></div></a>
+</div></section>
+<section class="about" id="about"><div class="about-inner">
+<p class="about-label">ABOUT ME</p><h2>배우며 성장하는 웹 퍼블리셔 지망생</h2>
+<p>웹 화면을 구성하고 결과를 확인하는 과정에 흥미가 있습니다. HTML과 CSS를 중심으로 웹 퍼블리싱을 공부해 왔으며, 일부 프로젝트에서는 JavaScript도 사용했습니다. 다양한 웹 페이지를 제작하며 페이지 구조와 반응형 화면 구성에 대한 경험을 넓혀 왔습니다.</p>
+<div class="about-contact"><a href="mailto:eunjin900808@gmail.com">이메일로 연락하기 ↗</a><a href="https://github.com/eunjin90" target="_blank" rel="noopener noreferrer">GitHub 방문하기 ↗</a></div>
+</div></section>
+</main>
+<footer class="footer">© 2026 Eunjin | Web Publishing Portfolio</footer>
 </body>
 </html>
