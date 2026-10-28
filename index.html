@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTML, CSS, JavaScript를 활용한 웹 퍼블리싱 포트폴리오입니다.">
   <title>Web Publisher Portfolio</title>
 
   <style>
@@ -15,6 +16,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 80px;
     }
 
     body {
@@ -29,31 +31,50 @@
       text-decoration: none;
     }
 
+    a:focus-visible {
+      outline: 3px solid #5879b7;
+      outline-offset: 4px;
+    }
+
     .header {
-      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid #e8e8e8;
     }
 
     .header-inner {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 22px 24px;
+      padding: 20px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 24px;
     }
 
     .logo {
       font-size: 20px;
       font-weight: 800;
       letter-spacing: -0.5px;
+      white-space: nowrap;
     }
 
     .nav {
       display: flex;
+      flex-wrap: wrap;
       gap: 24px;
       font-size: 14px;
       color: #555;
+    }
+
+    .nav a {
+      transition: color 0.2s;
+    }
+
+    .nav a:hover {
+      color: #365d9c;
     }
 
     .hero {
@@ -127,6 +148,7 @@
     .project-card {
       display: flex;
       flex-direction: column;
+      min-width: 0;
       overflow: hidden;
       background: #fff;
       border: 1px solid #e9ebef;
@@ -135,7 +157,7 @@
     }
 
     .project-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
       box-shadow: 0 14px 32px rgba(28, 42, 65, 0.10);
     }
 
@@ -145,30 +167,55 @@
       justify-content: center;
       align-items: center;
       padding: 24px;
-      background: #edf2fa;
-      color: #263e65;
+      text-align: center;
+      overflow-wrap: anywhere;
     }
 
-    .project-visual .number {
-      font-size: 48px;
-      font-weight: 800;
-      opacity: 0.22;
-    }
-
-    .project-visual .visual-title {
-      font-size: 25px;
+    .visual-title {
+      font-size: clamp(20px, 2.3vw, 25px);
       font-weight: 800;
       letter-spacing: -1px;
     }
 
-    .canon { background: #f1f0ed; color: #3e3e3e; }
-    .furniture { background: #eee5d9; color: #604b38; }
-    .hana { background: #e5f5ed; color: #00866b; }
-    .hollys { background: #f8e9e9; color: #9e3434; }
-    .hospital { background: #e7f1fa; color: #2b6695; }
-    .indigo { background: #e9e8f8; color: #4e4b9b; }
-    .mcdonald { background: #fff0d7; color: #b33222; }
-    .responsive { background: #e3edf8; color: #254f82; }
+    .canon {
+      background: #f1f0ed;
+      color: #3e3e3e;
+    }
+
+    .furniture {
+      background: #eee5d9;
+      color: #604b38;
+    }
+
+    .hana {
+      background: #e5f5ed;
+      color: #00866b;
+    }
+
+    .hollys {
+      background: #f8e9e9;
+      color: #9e3434;
+    }
+
+    .hospital {
+      background: #e7f1fa;
+      color: #2b6695;
+    }
+
+    .indigo {
+      background: #e9e8f8;
+      color: #4e4b9b;
+    }
+
+    .mcdonald {
+      background: #fff0d7;
+      color: #b33222;
+    }
+
+    .responsive {
+      background: #e3edf8;
+      color: #254f82;
+    }
 
     .project-info {
       padding: 22px;
@@ -186,10 +233,11 @@
       color: #777;
       font-size: 13px;
       line-height: 1.8;
-      min-height: 48px;
+      flex: 1;
     }
 
     .project-link {
+      display: block;
       margin-top: 20px;
       padding-top: 14px;
       border-top: 1px solid #eee;
@@ -208,13 +256,21 @@
       margin: 0 auto;
     }
 
+    .about-label {
+      color: #5879b7;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
     .about h2 {
       font-size: 28px;
       margin-bottom: 16px;
     }
 
     .about p {
-      max-width: 700px;
+      max-width: 760px;
       color: #666;
       line-height: 2;
       font-size: 14px;
@@ -239,17 +295,40 @@
     }
 
     @media (max-width: 520px) {
+      html {
+        scroll-padding-top: 70px;
+      }
+
       .header-inner {
-        padding: 18px;
+        padding: 16px 18px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 18px;
       }
 
       .nav {
-        gap: 12px;
-        font-size: 12px;
+        gap: 18px;
+        font-size: 13px;
       }
 
       .hero {
-        padding: 65px 20px;
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .hero p br {
+        display: none;
       }
 
       .projects {
@@ -258,6 +337,7 @@
 
       .project-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
       }
 
       .project-visual {
@@ -267,6 +347,26 @@
       .section-title h2 {
         font-size: 26px;
       }
+
+      .about {
+        padding: 50px 20px;
+      }
+
+      .about h2 {
+        font-size: 25px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
@@ -274,9 +374,11 @@
 <body>
   <header class="header">
     <div class="header-inner">
-      <a href="#" class="logo">MY PORTFOLIO.</a>
+      <a href="#" class="logo" aria-label="포트폴리오 첫 화면">
+        MY PORTFOLIO.
+      </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="주요 메뉴">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
       </nav>
@@ -287,10 +389,16 @@
     <section class="hero">
       <div class="hero-inner">
         <p class="eyebrow">WEB PUBLISHER PORTFOLIO</p>
-        <h1>작은 디테일까지 고민하는<br>웹 퍼블리셔 포트폴리오</h1>
+
+        <h1>
+          작은 디테일까지 고민하는<br>
+          웹 퍼블리셔 포트폴리오
+        </h1>
+
         <p>
-          HTML과 CSS를 활용해 웹 화면을 구현한 작업물입니다.<br>
-          다양한 웹사이트를 직접 만들어 보며 경험을 쌓고 있습니다.
+          HTML과 CSS를 중심으로 웹 화면을 구현하고,<br>
+          일부 프로젝트에서는 JavaScript를 활용해 기능을 구현했습니다.<br>
+          다양한 작업을 통해 웹 퍼블리싱 경험을 쌓고 있습니다.
         </p>
       </div>
     </section>
@@ -310,7 +418,7 @@
           </div>
           <div class="project-info">
             <h3>Canon</h3>
-            <p>카메라 브랜드 웹사이트 제작 연습</p>
+            <p>카메라 브랜드 웹사이트의 레이아웃과 콘텐츠 영역을 구현한 프로젝트입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
@@ -321,18 +429,18 @@
           </div>
           <div class="project-info">
             <h3>Furniture</h3>
-            <p>가구 및 인테리어 웹사이트 제작 연습</p>
+            <p>가구 및 인테리어 웹사이트의 화면 구성과 레이아웃을 연습한 프로젝트입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
 
         <a class="project-card" href="./hana/">
           <div class="project-visual hana">
-            <span class="visual-title">HANA</span>
+            <span class="visual-title">HANA TOUR</span>
           </div>
           <div class="project-info">
-            <h3>Hana</h3>
-            <p>금융 관련 웹사이트 화면 구현 연습</p>
+            <h3>Hana Tour</h3>
+            <p>하나투어 홈페이지를 참고해 메뉴와 콘텐츠 영역을 구성한 웹사이트 프로젝트입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
@@ -343,7 +451,7 @@
           </div>
           <div class="project-info">
             <h3>Hollys</h3>
-            <p>카페 브랜드 웹사이트 제작 연습</p>
+            <p>카페 브랜드 홈페이지의 메뉴와 주요 콘텐츠를 배치한 웹사이트 프로젝트입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
@@ -354,7 +462,7 @@
           </div>
           <div class="project-info">
             <h3>Hospital</h3>
-            <p>병원 웹사이트 화면 구현 연습</p>
+            <p>병원 홈페이지의 콘텐츠 영역과 전체적인 화면 레이아웃을 구현한 프로젝트입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
@@ -365,7 +473,7 @@
           </div>
           <div class="project-info">
             <h3>Indigo</h3>
-            <p>웹 디자인 및 레이아웃 구현 연습</p>
+            <p>화면 크기에 따라 레이아웃이 조정되는 반응형 웹사이트를 구현한 프로젝트입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
@@ -376,18 +484,29 @@
           </div>
           <div class="project-info">
             <h3>McDonald's</h3>
-            <p>패스트푸드 브랜드 웹사이트 제작 연습</p>
+            <p>패스트푸드 브랜드 홈페이지의 구성과 콘텐츠 배치를 연습한 프로젝트입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
 
         <a class="project-card" href="./responsive_web_/">
           <div class="project-visual responsive">
-            <span class="visual-title">RESPONSIVE</span>
+            <span class="visual-title">RESPONSIVE WEB</span>
           </div>
           <div class="project-info">
             <h3>Responsive Web</h3>
-            <p>반응형 웹 레이아웃 학습 및 실습</p>
+            <p>다양한 화면 크기에 맞춰 웹 페이지를 구성하는 반응형 웹 실습 프로젝트입니다.</p>
+            <span class="project-link">프로젝트 보기 ↗</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="./0814bootstrap/">
+          <div class="project-visual responsive">
+            <span class="visual-title">BOOTSTRAP</span>
+          </div>
+          <div class="project-info">
+            <h3>Bootstrap Website</h3>
+            <p>Bootstrap을 활용해 레이아웃과 캐러셀 등 UI 요소를 구성한 웹 페이지 실습입니다.</p>
             <span class="project-link">프로젝트 보기 ↗</span>
           </div>
         </a>
@@ -397,11 +516,14 @@
 
     <section class="about" id="about">
       <div class="about-inner">
-        <h2>About Me</h2>
+        <p class="about-label">ABOUT ME</p>
+        <h2>배우며 성장하는 웹 퍼블리셔 지망생</h2>
         <p>
           웹 화면을 직접 구현하고 결과를 확인하는 과정에 흥미를 느낍니다.
           HTML과 CSS를 바탕으로 웹 퍼블리싱을 공부하고 있으며,
-          다양한 작업을 통해 꾸준히 배우고 성장하고 있습니다.
+          일부 프로젝트에서는 JavaScript도 활용했습니다.
+          다양한 작업을 통해 웹 페이지의 구조와 화면 구성에 대한 이해를 넓히고,
+          새로운 기술을 꾸준히 배우며 성장하고 있습니다.
         </p>
       </div>
     </section>
